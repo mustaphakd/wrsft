@@ -1,0 +1,295 @@
+/*-webkit-box-shadow:inset $horiz $vert $blur $spread $color;
+    -moz-box-shadow:inset $horiz $vert $blur $spread $color;*/
+/*-webkit-box-shadow: $horiz $vert $blur $spread $color;
+    -moz-box-shadow: $horiz $vert $blur $spread $color;*/
+/*
+.selector-1 {
+  @include linear-gradient(#31B7D7, #EDAC7D);
+}
+
+.selector-2 {
+  @include linear-gradient(to right, #E47D7D 0%, #C195D3 50%, #4FB4E8 100%);
+}
+
+.selector-3 {
+  @include linear-gradient(42deg, #B58234 0%, #D2B545 50%, #D7C04D 50.01%, #FFFFFF 100%);
+}
+
+*/
+/*  box-shadow:inset $horiz $vert $blur $spread $color;
+a.something should extend this mixin
+*/
+/*inset 0px 1px rgba(255, 255, 255, 0.4);*/
+/**
+* Vertical Scroll bar using Sly js
+*/
+/**
+HSLa helper functions
+*/
+/*
+ tooltip generator
+ default data attribute is data-tooltip
+ 50
+ "konel-building"
+ rgb(252, 250, 247)  0
+ 100px
+*/
+body, html {
+  background: #222;
+  height: 100%;
+  overflow: hidden;
+  /************************************hidden*****************/ }
+
+/********************Fonts Definitions**********************/
+@font-face {
+  font-family: "konel-abel";
+  src: url("../fonts/ersdal/Abel-Regular.eot");
+  src: url("../fonts/ersdal/Abel-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ersdal/Abel-Regular.woff") format("woff"), url("../fonts/ersdal/Abel-Regular.ttf") format("truetype"), url("../fonts/ersdal/Abel-Regular.svg#konel-abel") format("svg"), url("../fonts/ersdal/Abel-Regular.otf") format("opentype"); }
+@font-face {
+  font-family: "konel-bizon";
+  src: url("../fonts/ersdal/Bizon.eot");
+  src: url("../fonts/ersdal/Bizon.eot?#iefix") format("embedded-opentype"), url("../fonts/ersdal/Bizon.woff") format("woff"), url("../fonts/ersdal/Bizon.ttf") format("truetype"), url("../fonts/ersdal/Bizon.svg#konel-bizon") format("svg"), url("../fonts/ersdal/Bizon.otf") format("opentype"); }
+@font-face {
+  font-family: "konel-building";
+  src: url("../fonts/ersdal/Building.eot");
+  src: url("../fonts/ersdal/Building.eot?#iefix") format("embedded-opentype"), url("../fonts/ersdal/Building.woff") format("woff"), url("../fonts/ersdal/Building.ttf") format("truetype"), url("../fonts/ersdal/Building.svg#konel-building") format("svg"), url("../fonts/ersdal/Building.otf") format("opentype"); }
+@font-face {
+  font-family: "pahel";
+  src: url("../fonts/bryul/bgrove.eot");
+  src: url("../fonts/bryul/bgrove.eot?#iefix") format("embedded-opentype"), url("../fonts/bryul/bgrove.woff") format("woff"), url("../fonts/bryul/bgrove.ttf") format("truetype"), url("../fonts/bryul/bgrove.svg#pahel") format("svg"), url("../fonts/bryul/bgrove.otf") format("opentype"); }
+@font-face {
+  font-family: "bmlask";
+  src: url("../fonts/bryul/museosans-web.eot");
+  src: url("../fonts/bryul/museosans-web.eot?#iefix") format("embedded-opentype"), url("../fonts/bryul/museosans-web.woff") format("woff"), url("../fonts/bryul/museosans-web.ttf") format("truetype"), url("../fonts/bryul/museosans-web.svg#bmlask") format("svg"), url("../fonts/bryul/museosans-web.otf") format("opentype"); }
+/***************************Fonts*****************************/
+.galleryItemTitle {
+  font-family: "bmlask";
+  font-size: 26px;
+  color: white;
+  text-decoration: none; }
+
+.regularText {
+  font-family: "pahel";
+  font-size: 1.005em;
+  color: white; }
+
+.galleryItemText {
+  font-family: "konel-abel";
+  font-size: 1.005em;
+  color: white; }
+
+.titleText {
+  font-family: "konel-bizon";
+  color: #f1eff4;
+  font-size: 4.5rem;
+  line-height: 1.2em;
+  padding: 50px 0;
+  text-align: center;
+  text-shadow: 0px 2px 2px #B8C043; }
+
+.dataVizTitleText {
+  font-family: "konel-building";
+  font-size: 1.005em;
+  color: orangered; }
+
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4; }
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle; }
+
+/*
+ * Remove default fieldset styles.
+ */
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+textarea {
+  resize: vertical; }
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/********************Buttons Definitions**********************/
+.btnSunshine {
+  border-radius: 5px;
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4);
+  display: block;
+  float: left;
+  padding: 20px 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ede8b1;
+  background: -webkit-linear-gradient(-90deg, #ede8b1, #d8cf69);
+  background: linear-gradient(180deg, #ede8b1, #d8cf69);
+  border: 1px solid #b9af41;
+  color: #706815;
+  text-shadow: 0px 1px #ebe5b2;
+  cursor: pointer;
+  width: 154px; }
+
+.btnSunshine:active {
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.25s; }
+
+.btnSunshine:hover {
+  background: #f1eec5;
+  background: -webkit-linear-gradient(-90deg, #f1eec5, #ded47d);
+  background: linear-gradient(180deg, #f1eec5, #ded47d); }
+
+.btnGreen {
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4);
+  display: block;
+  float: left;
+  padding: 8px 5px;
+  font-size: 0.575rem;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #b1ede6;
+  background: -webkit-linear-gradient(-90deg, #b1ede6, #69d8cb);
+  background: linear-gradient(180deg, #b1ede6, #69d8cb);
+  border: 1px solid #41b9ab;
+  color: #157065;
+  text-shadow: 0px 1px #b2ebe4;
+  cursor: pointer; }
+
+.btnGreen:active {
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.25s; }
+
+.btnGreen:hover {
+  background: #c5f1ec;
+  background: -webkit-linear-gradient(-90deg, #c5f1ec, #7dded1);
+  background: linear-gradient(180deg, #c5f1ec, #7dded1); }
+
+.btnOrand {
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4);
+  display: block;
+  float: left;
+  padding: 8px 5px;
+  font-size: 0.575rem;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #edcfb1;
+  background: -webkit-linear-gradient(-90deg, #edcfb1, #d8a169);
+  background: linear-gradient(180deg, #edcfb1, #d8a169);
+  border: 1px solid #b97d41;
+  color: #704215;
+  text-shadow: 0px 1px #ebceb2;
+  cursor: pointer; }
+
+.btnOrand:active {
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.25s; }
+
+.btnOrand:hover {
+  background: #f1dbc5;
+  background: -webkit-linear-gradient(-90deg, #f1dbc5, #deac7d);
+  background: linear-gradient(180deg, #f1dbc5, #deac7d); }
+
+.btnBlue {
+  border-radius: 8px;
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4);
+  display: block;
+  float: left;
+  padding: 8px 5px;
+  font-size: 0.575rem;
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #bab1ed;
+  background: -webkit-linear-gradient(-90deg, #bab1ed, #7a69d8);
+  background: linear-gradient(180deg, #bab1ed, #7a69d8);
+  border: 1px solid #5341b9;
+  color: #221570;
+  text-shadow: 0px 1px #bab2eb;
+  cursor: pointer; }
+
+.btnBlue:active {
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  transition: 0.25s; }
+
+.btnBlue:hover {
+  background: #ccc5f1;
+  background: -webkit-linear-gradient(-90deg, #ccc5f1, #8a7dde);
+  background: linear-gradient(180deg, #ccc5f1, #8a7dde); }
+
+/******************************Mobile only********************************************/
+.mobileOnly {
+  display: none; }
+  @media (max-width: 768px) {
+    .mobileOnly {
+      display: inline-block; } }
+
+/*# sourceMappingURL=main.css.map */
