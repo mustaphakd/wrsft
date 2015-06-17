@@ -1,7 +1,8 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html >
     <head>
         <meta name="description" content="">
+
         <title>Worosoft</title>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
@@ -11,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="css/icons.min.css" />
         <link rel="stylesheet" type="text/css" href="css/af.ui.css" />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="icon"  sizes="61x60" href="favicon.ico">
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/normalize.css">
@@ -23,70 +25,105 @@
         <script type="text/javascript" charset="utf-8" src="js/vendor/af.ui.js"></script>
 
         <script src="js/vendor/af.desktopBrowsers.js"></script>
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!--<script src="js/vendor/modernizr-2.8.3.min.js"></script>-->
+
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.actionsheet.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.animation.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.touchEvents.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.drawer.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.toast.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.animateheader.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.splashscreen.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/vendor/af.swipereveal.js"></script>
 
         <script>
-            $.afui.useOSThemes=false;
+            $.afui.useOSThemes=true;
             $.afui.loadDefaultHash=true;
             $.afui.autoLaunch=false;
 
-            //check search
-            var search=document.location.search.toLowerCase().replace("?","");
-            if(search.length>0)
-            {
+           var rand =  Math.floor((Math.random() * 10) + 1);
 
-                $.afui.useOSThemes=true;
-                if(search=="win8")
-                    $.os.ie=true;
-                else if(search=="firefox")
-                    $.os.fennec="true"
-                $.afui.ready(function(){
-                    $(document.body).get(0).className=(search);
-                });
+            if((rand % 4) == 0)
+            {
+                $.os.fennec="true";
             }
+            else if((rand % 2) == 0)
+            {
+                $.os.ios="true";
+            }
+            else
+            {
+                $.os.ie=true;
+            }
+
 
             $(document).ready(function(){
                 $.afui.launch();
             });
 
-            //if($.os.ios)
             $.afui.animateHeader(true);
 
         </script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+
+        <div id="splashscreen" class='ui-loader heavy'>
+            <img src="img/w.png" height="40px" />orosoft
+            <br>
+            <br>
+            <span class='ui-icon ui-icon-loading spin'></span>
+            <h1>Starting app</h1>
+
+        </div>
 
         <!-- Add your site or application content here -->
-        <div class="view" id="mainView">
-            <header><h1>My Header</h1></header>
-            <div class="pages">
-                <div class="panel" data-title="main" id="main" selected="true">
-                    Hello World
+        <div class="view" id="mainview">
+            <header>
+                <span style="float: right;"><img src="img/w.png" height="40px" />orosoft</span>
+                <h1> extraordinary</h1>
+            </header>
+            <div class="pages" >
+                <div class="panel" style="font-family: konel-building" id="main" data-title="  let’s work together to create something exceptional" data-selected="true">
+                    <br />
+                    <div class="card">
+                        <h1 class='info' style="font-family: konel-bizon;">Quality at your service</h1>
+                        <div class="grid">
+                            <div class="col1-3">
+                                <img src="img/cardIcon.png">
+                            </div>
+
+                            <div class="col2-3" style="font-family: konel-abel;font-size: 24px;">
+                                Trust our experts and specialists experiences in UX, Visual Design, Enterprise Architecture, Project Management, and Software Development  to drive success in your organization’s next transformational technology initiative whether engineering a new application, upgrading or migrating your legacy apps to keep up with the current market.
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="panel" id="expertise" data-title="expertise " data-include="partials/expert.html" >
+
+                </div>
+                <div class="panel" id="location" data-title="location" data-include="partials/locale.html">
+
+                </div>
+                <div class="panel" id="contact" data-title="contact" data-include="partials/contact.html" >
+
                 </div>
             </div>
             <footer>
-                <a href="#main" class="icon home">Home</a>
+                <a href="#main" class="icon home" data-transition="pop">About</a>
+
+                <a href="#expertise" class="icon html5" data-transition="slide">expertise</a><!-- pop || flip -->
+                <a href="#location" class="icon location" data-transition="up-reveal">Locale</a>
+                <a href="#contact" class="icon chat"  data-transition="flip" >Contact</a>
             </footer>
+
         </div>
 
-        <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>-->
         <script src="js/plugins.js"></script>
 
 
         <script src="js/main.js"></script>
+        <script type="text/javascript" src="http://www.skypeassets.com/i/scom/js/skype-uri.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script> -->
     </body>
 </html>
